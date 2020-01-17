@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIND API</title>    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+
+        <!--<![endif]-->
+
+        <title>WIND API</title>
+        <script type="text/javascript">
+          function submit_action_locations() {
+            var c = confirm('Click \'OK\' to proceed');
+            var xhr = new XMLHttpRequest();
+            var info;
+            if (c == true) {
+              xhr.open('GET', "http://localhost:8000/wind_api/get_localizations/", true);
+              xhr.send();
+              info = "Fresh data should be leaded into database in few seconds #locations";
+              document.getElementById("message").innerHTML = info;
+            }
+          };
+          function submit_action_observations() {
+            var c = confirm('Click \'OK\' to proceed');
+            var xhr = new XMLHttpRequest();
+            var info;
+            if (c == true) {
+              xhr.open('GET', "http://localhost:8000/wind_api/get_observations/", true);
+              xhr.send();
+              info = "Fresh data should be leaded into database in few seconds #observations";
+              document.getElementById("message").innerHTML = info;
+            }
+          };
+
+        </script>
+
+</head>
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">WIND PROJECT</a>
+    </div>
+</div>
+
+<div class="splash-container" style="height: 100%;">
+    <div class="splash">
+        <!--<h1 class="splash-head">Big Bold Text</h1>-->
+        <p class="splash-subhead" style="color: white;">
+            Get locations and current data about wind around the world
+        </p>
+        <p style="color: white;">
+            Push the button to get fresh data
+        </p>
+        <p>
+            <a onclick="submit_action_locations()" class="pure-button pure-button-primary" style="background-color: white;"><span style="color: #7f8c8d;">Locations</span></a>
+            
+        </p>
+        <p>
+            <a onclick="submit_action_observations()" class="pure-button pure-button-primary" style="background-color: white;"><span style="color: #7f8c8d;">Wind data</span></a>
+        </p>
+        <p id="message" style="color: white;">
+          
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
