@@ -12,7 +12,9 @@ Locations source: simplemaps.com
 <br><br>
 FEAUTRES:
 locations import
+
 wind data import (async)
+
 filter (wind direction)
 
 
