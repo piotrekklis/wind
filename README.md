@@ -12,6 +12,7 @@ Wind data comes from weatherbit.io
 Locations source: simplemaps.com
 <br><br>
 FEAUTRES:
+
 locations import
 
 wind data import (async)
@@ -19,5 +20,5 @@ wind data import (async)
 filter (wind direction)
 
 
-
+<br>
 /wind_api/
